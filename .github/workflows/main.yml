@@ -1,0 +1,12 @@
+name: Build & Deploy
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+
+jobs:
+  Build: 
+    uses: CombatWarships/DevOps/.github/workflows/Nuget.yml@main
+    with:
+      CSPROJ_PATH: ShipDomain.csproj      
+      RELEASE_DIR: bin/Release/
